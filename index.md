@@ -49,7 +49,7 @@ Since the project needs to be developed from scratch, i had breakdown the develo
 <h2> Link to work </h2>
 <ul>
 <li><a href="https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features"> Link to full repository</a></li>
-<li><a href="https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features/commits/master">Links for all commits</a></li>
+<li><a href="https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features/commits/master">Link for all commits</a></li>
 </ul>
 
 <br>
