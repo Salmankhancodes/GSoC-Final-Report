@@ -14,6 +14,7 @@ This output helps the user to understand connections between their method and th
 Here is an example of the website functionality I developed from scratch in this GSoC project:
 <img src="GIF-200822_154754.gif">
 
+
 ### What was done
 Since the project needs to be developed from scratch, I have broken down the development process into three parts:
 <ol>
@@ -36,7 +37,9 @@ I implemented a range of functionality, including:</em><br>
 <li>Visualization of top 12 results as interactive scatter plots (as visualized in the gif below), which enables users to:<ul><li>Hover to see data points.</li><li>Zoom each plot or all subplots simultaneously to more clearly visualize the relationships.</li></ul>
 <img src="GIF-200822_154727.gif"></li>
 
-<li>Visualization of pairwise relationships between each of the top 12 matches as a correlation heatmap reordered using linkage clustering.</li>
+<li>Visualization of pairwise relationships between each of the top 12 matches as a correlation heatmap reordered using linkage clustering.<br>
+<img src="Heatmap.png">
+</li>
 
 </ul>
 <br>
@@ -56,7 +59,7 @@ Thus, in order to run user's code safely, we:</em><br><br>
 <ul>
 <li>
   <a href="https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features">Link to full repository</a>
-  </li><br>
+  </li>
   <li><a href="https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features/commits/master">Links for all commits</a>
 </li>
 </ul>
