@@ -6,56 +6,61 @@
 ##### Mentors      : Ben Fulcher, Oliver Cliff, Joseph Lizier
 
 ### Introduction
-In this **Google Summer of Code 2020** project i had developed a web-based system that helps the user to compare timeseries analysis method.It takes time-series analysis method as python code from a user, computes it with a diverse time-series dataset and analyzes the relation of the newly developed method with 7700+ features and presents the best matching features as output which can help the user to conclude the similarity
-between new method and pre-existing methods.
+In this **Google Summer of Code 2020** project I developed a web-based system that helps the user to compare new time-series analysis algorithms to a collection of over 7700 existing algorithms, implemented as the [_hctsa_ package](https://github.com/benfulcher/hctsa).
+The website takes a new time-series analysis algorithm (as python code) from the user and computes its outputs across a [dataset of 1000 diverse time series](https://figshare.com/articles/1000_Empirical_Time_series/5436136).
+It then analyzes the correlation between the output of the user's algorithm with the _hctsa_ feature library and presents a range of intuitive output visualizations that show the best-matching features.
+This output helps the user to understand connections between their method and the existing interdisciplinary time-series analysis literature, and therefore to assess whether their algorithm is really contributing progress to the literature.
 
+Here is an example of the website functionality I developed from scratch in this GSoC project:
 <img src="GIF-200822_154754.gif">
-### What was done :
-Since the project needs to be developed from scratch, i had breakdown the development in three parts:
+
+### What was done
+Since the project needs to be developed from scratch, I have broken down the development process into three parts:
 <ol>
 <li><strong>First phase</strong> - Backend / logic development</li><br>
-<em>For execution of user's code properly and perform automated comparison i had written series of functions that help performs the several operations.</em><br>
+<em>I developed a series of functions to enable successful execution of the user's code, and to perform systematic comparison of its output to that of existing algorithms:</em><br>
 <br>
-<ul><li>Function that properly reads user's code as string and check for malicious code before execution. </li>
-<li>Function that passes diverse time-series dataset through user's function and generate  long feature vector.</li>
-<li>Function that takes newly generated feature vector, and find its spearman's correlation with each column of hctsa datamatrix and store all the information (Feature name, Keywords,p-value,Correlation) of best matches in sorted order.</li>
-<li>Structured the results for rendering in dynamic table and for interactive plots.</li>
+<ul><li>Read the user's code as a string to check for malicious code before execution.</li>
+<li>Passes a diverse time-series dataset through user's function and generate long feature vector.</li>
+<li>Compute the Spearman correlation coefficient between the computed feature vector and with every individual <em>hctsa</em> feature, and sort and store all of the relevant information: (Feature name, Keywords, <em>p</em>-value, Correlation coefficient).</li>
+<li>Structure the results for rendering in a dynamic table and interactive plotting.</li>
 </ul>
 <br>
 <li><strong>Second phase</strong> - Front-end development</li>
-<br><em>In this phase i had focused on front-end development , that will be used by the user which includes :</em><br>
+<br><em>In this phase, I focused on front-end development, that will be used by the user.
+I implemented a range of functionality, including:</em><br>
 <br>
 <ul>
-<li>Development of pages for websites that includes Home, How-it-works, Contact,  Preloader, Result, Syntax error, Timeout Error, 404 Not found. </li>
-<li>Interactive Result table that includes with options to:<ul><li>Toggle to change representation of results.</li><li>Download all results in .csv format</li><li>Toggle button to view table in full size.</li><li>Choose show / hide column from table.</li></ul><img src="GIF-200822_154604.gif"></li>
-<li>Visualization of top 12 results with Interactive scatter plots<ul><li>Hover to see data points.</li><li>Zoom each plot or all subplots simultaneously  to understand clearly the data points.</li></ul>
-<img src="GIF-200822_154727.gif"></li> 
+<li>Development of pages for websites, including 'Home', 'How-it-works', 'Contact', 'Preloader', 'Result', 'Syntax error', 'Timeout Error', and '404 Not found'.</li>
+<li>Interactive results table (functionality shown in the gif below), that allows users to:<ul><li>Toggle to change representation of results.</li><li>Download all results in .csv format.</li><li>Toggle button to view table in full size.</li><li>Choose show / hide column from table.</li></ul><img src="GIF-200822_154604.gif"></li>
+<li>Visualization of top 12 results as interactive scatter plots (as visualized in the gif below), which enables users to:<ul><li>Hover to see data points.</li><li>Zoom each plot or all subplots simultaneously to more clearly visualize the relationships.</li></ul>
+<img src="GIF-200822_154727.gif"></li>
 
-<li>Visualization of top 12 results with correlation heatmap with linkage clustering dendogram.</li>
+<li>Visualization of pairwise relationships between each of the top 12 matches as a correlation heatmap reordered using linkage clustering.</li>
 
 </ul>
 <br>
-<li><strong>Third phase</strong> - Running user's code securely and Error handlings.<br><br>
-<em>This was one of the major challenge as executing user code on server could compromise the system. So to run user's code safely:</em><br><br>
-<ul><li>We are using RestrictedPython to run user's code in a restricted environment.</li><li>Allows to import only those modules that are computation specific and does not tries to access/modify system</li>
-<li>Restricted in-built functions like exec, eval that can harm our system.</li>
-<li>Timeout limit added to user's function so that if it falls into infinite loop and exceeds limit we can kill the process and render timeout error. </li>
-
-<li>Other than that handled all possible errors like Syntax error, 404 page not found, Timeout error
+<li><strong>Third phase</strong> - Running user's code securely and with error handling.<br><br>
+<em>This was one of the major challenges, as executing custom user code on a server could compromise the system.
+Thus, in order to run user's code safely, we:</em><br><br>
+<ul>
+<li>Used RestrictedPython to run the user's code in a restricted environment.</li>
+<li>Allow the user to import only specific modules that are relevant to scientific data analysis, and thus disabling functionality related to accessing/modifying the system.</li>
+<li>Restricted in-built functions like exec or eval that could be used to harm the system.</li>
+<li>Added a timeout limit so that the system is protected from algorithms falling into an infinite loop. </li>
+<!-- <li>Handled other possible errors like Syntax error, 404 page not found, and Timeout error. -->
 </li>
 <br>
 </ul>
 
-<h2> Link to work </h2>
-<ul>
-<li><a href="https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features"> Link to full repository</a></li>
-<li><a href="https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features/commits/master">Links for all commits</a></li>
-</ul>
+## Link to work
+* [Link to full repository](https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features)
+* [Links for all commits](https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features/commits/master).
 
 <br>
 
-<h2> Weekly Reports</h2>
-These are the weekly reports that i had submitted to INCF during GSoC period :<br>
+## Weekly Reports
+These are the weekly reports that i had submitted to INCF during GSoC period:<br>
 
 <a href="https://drive.google.com/file/d/1DKX11fXbYbpREzT8H0AB5Vdq8xSzLO8u/view?usp=sharing">Week 1 & Week 2</a><br>
 <a href="https://drive.google.com/file/d/12lr42BS4PyOyBUC1cqbAaYDeUksdllxe/view?usp=sharing">Week 3</a><br>
@@ -69,10 +74,11 @@ These are the weekly reports that i had submitted to INCF during GSoC period :<b
 <a href="https://drive.google.com/file/d/1PumTCAHoR7FEz21GVpolGOb6o0J14Khd/view?usp=sharing">Week 11</a><br>
 <a href="https://drive.google.com/file/d/10CzCYMVjRRHOa4Khtgkno3oRTgbn06p7/view?usp=sharing">Week 12</a><br>
 
+---
+## Future Work
+Although all the requirements of this project as outlined in the GSoC proposal have been completed, this project represents the important initial steps in the full development of _CompEngine-Features_.
+After the official GSoC period, I plan to contribute to this further development by:
 
-<br>
-<br>
-<h2> Future Work</h2>
-Since the minimal requirements of this project as outlined in GSoC proposal is completed but there are lot more things that could be implemented and can enhance the system. After GSoC period i am planning to:
-<ul><li>Add explore mode by which user can compare already exisiting features.</li>
-<li>Add a nested result table clicking on any result will take to other result table of similar features</li><li>Other ways of visualization like Network Visualization.</li></ul>
+* Adding an explore mode by which user can compare already exisiting features.
+* Adding a nested result table clicking on any result will take to other result table of similar features
+* Implementing additional visualizations, including a network visualization.
