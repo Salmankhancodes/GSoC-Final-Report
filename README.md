@@ -49,17 +49,23 @@ Thus, in order to run user's code safely, we:</em><br><br>
 <li>Restricted in-built functions like exec or eval that could be used to harm the system.</li>
 <li>Added a timeout limit so that the system is protected from algorithms falling into an infinite loop. </li>
 <!-- <li>Handled other possible errors like Syntax error, 404 page not found, and Timeout error. -->
-</li>
 <br>
 </ul>
 
-## Link to work
-* [Link to full repository](https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features)
-* [Links for all commits](https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features/commits/master).
+<h3> Link to work </h3>
+<ul>
+<li>
+  <a href="https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features">Link to full repository</a>
+  </li><br>
+  <li><a href="https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features/commits/master">Links for all commits</a>
+</li>
+</ul>
+<br>
+
 
 <br>
 
-## Weekly Reports
+<h3> Weekly Reports </h3>
 These are the weekly reports that i had submitted to INCF during GSoC period:<br>
 
 <a href="https://drive.google.com/file/d/1DKX11fXbYbpREzT8H0AB5Vdq8xSzLO8u/view?usp=sharing">Week 1 & Week 2</a><br>
@@ -74,11 +80,12 @@ These are the weekly reports that i had submitted to INCF during GSoC period:<br
 <a href="https://drive.google.com/file/d/1PumTCAHoR7FEz21GVpolGOb6o0J14Khd/view?usp=sharing">Week 11</a><br>
 <a href="https://drive.google.com/file/d/10CzCYMVjRRHOa4Khtgkno3oRTgbn06p7/view?usp=sharing">Week 12</a><br>
 
----
-## Future Work
+<hr>
+<h3> Future Work </h3>
 Although all the requirements of this project as outlined in the GSoC proposal have been completed, this project represents the important initial steps in the full development of _CompEngine-Features_.
 After the official GSoC period, I plan to contribute to this further development by:
-
-* Adding an explore mode by which user can compare already exisiting features.
-* Adding a nested result table clicking on any result will take to other result table of similar features
-* Implementing additional visualizations, including a network visualization.
+<ul>
+  <li> Adding an explore mode by which user can compare already exisiting features.</li>
+<li> Adding a nested result table clicking on any result will take to other result table of similar features</li>
+  <li> Implementing additional visualizations, including a network visualization.</li>
+</ul>
