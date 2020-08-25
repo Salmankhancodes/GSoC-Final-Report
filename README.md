@@ -20,6 +20,7 @@ Since the project needs to be developed from scratch, I have broken down the dev
 
 1. **First phase - Backend / logic development**  
 &nbsp; _I developed a series of functions to enable successful execution of the user's code, and to perform systematic comparison of its output to that of existing algorithms:_  
+
    * Read the user's code as a string to check for malicious code before execution.
    * Passes a diverse time-series dataset through user's function and generate long feature vector.
    * Compute the Spearman correlation coefficient between the computed feature vector and with every individual <em>hctsa</em> feature, and sort and store all of the relevant information: (Feature name, Keywords, _p_-value, Correlation coefficient).
@@ -27,8 +28,7 @@ Since the project needs to be developed from scratch, I have broken down the dev
 
 
 2. **Second phase - Front-end development**  
-&nbsp; _In this phase, I focused on front-end development, that will be used by the user.
-I implemented a range of functionality, including:_  
+&nbsp; _In this phase, I focused on front-end development, that will be used by the user.I implemented a range of functionality, including:_  
 
    * Development of pages for websites, including 'Home', 'How-it-works', 'Contact', 'Preloader', 'Result', 'Syntax error', 'Timeout Error', and '404 Not found'.
    * Interactive results table (functionality shown in the gif below), that allows users to:
