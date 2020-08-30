@@ -57,7 +57,7 @@ Since the project needs to be developed from scratch, I have broken down the dev
 
 ### Link to work
 * [Link to full repository](https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features)
-* [Links for all commits](https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features/commits/master)
+* [Links for all commits](https://github.com/NeuralSystemsAndSignals/Comp-Engine-Features/commits?author=Salmankhancodes)
 
 ### Weekly Reports
 _These are the weekly reports that i had submitted to INCF during GSoC period:_
